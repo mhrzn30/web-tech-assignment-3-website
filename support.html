@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support Forum</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="support.css" />
+    <style>
+      /* Some additional styling */
+      .discussion-reply {
+        display: none;
+        margin-top: 10px;
+      }
+      .discussion-comments {
+        display: none;
+        margin-top: 15px;
+        padding-left: 20px;
+      }
+      .discussion-box-open {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <img
+        src="https://via.placeholder.com/150"
+        alt="MindFulConnect Logo"
+        class="logo"
+      />
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">Resources</a>
+        <a href="support.html">Support Forum</a>
+        <a href="#">Counseling</a>
+        <a href="#">Mental Health Quizzes</a>
+        <a href="#">Login/Sign-Up</a>
+      </nav>
+    </header>
+
+    <!-- Sidebar for Forum Categories -->
+    <aside class="forum-categories-sidebar">
+      <h2>Forum Categories</h2>
+      <div class="resources-search-bar">
+        <input type="text" placeholder="Search Categories" />
+        <img src="./assets/ic-search-2.svg" alt="Search Icon" />
+      </div>
+      <div class="resources-filter">
+        <label for="forumCategoryFilter">Filter by Category:</label>
+        <select id="forumCategoryFilter">
+          <option value="all">All</option>
+          <option value="anxiety">Anxiety</option>
+          <option value="mindfulness">Mindfulness</option>
+          <option value="depression">Depression</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <!-- Display the selected forum category here -->
+      <div class="selected-category">
+        <h3>Selected Category:</h3>
+        <p id="selectedForumCategoryName">All</p>
+      </div>
+      <div class="forum-category-list">
+        <div class="category-item" data-category="anxiety">
+          <h3>Anxiety</h3>
+          <p>15 active discussions</p>
+        </div>
+        <div class="category-item" data-category="mindfulness">
+          <h3>Mindfulness</h3>
+          <p>12 active discussions</p>
+        </div>
+        <div class="category-item" data-category="depression">
+          <h3>Depression</h3>
+          <p>20 active discussions</p>
+        </div>
+        <div class="category-item" data-category="others">
+          <h3>Others</h3>
+          <p>8 active discussions</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Start a New Discussion -->
+    <section class="new-discussion-section">
+      <h2>Start a New Discussion</h2>
+      <p>Share your thoughts and experiences</p>
+      <form id="newDiscussionForm">
+        <div class="chip-group">
+          <span class="chip">Anxiety</span>
+          <span class="chip">Mindfulness</span>
+          <span class="chip">Depression</span>
+          <span class="chip">Others</span>
+        </div>
+        <div class="input-group">
+          <label for="discussion-title">Discussion Title</label>
+          <input
+            type="text"
+            id="discussionTitle"
+            placeholder="Enter title"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="discussion-body">Body</label>
+          <textarea
+            id="discussionBody"
+            placeholder="Type your message here"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </section>
+
+    <!-- Latest Discussions -->
+    <section class="discussions-section">
+      <h2>Latest Discussions</h2>
+      <div class="discussion-list" id="discussionList">
+        <!-- Initial Dummy Discussions -->
+        <article class="discussion-card" data-category="anxiety">
+          <div class="discussion-content">
+            <h3>Coping with Seasonal Anxiety</h3>
+            <p>How do you cope with seasonal anxiety changes?</p>
+            <div class="discussion-interact">
+              <button onclick="toggleReply(this)">Reply</button>
+            </div>
+            <div class="discussion-reply">
+              <textarea placeholder="Write a reply..."></textarea>
+              <button onclick="addComment(this)">Submit Reply</button>
+            </div>
+            <div class="discussion-comments"></div>
+          </div>
+        </article>
+        <article class="discussion-card" data-category="mindfulness">
+          <div class="discussion-content">
+            <h3>Daily Mindfulness Tips</h3>
+            <p>Share your daily mindfulness tips and tricks!</p>
+            <div class="discussion-interact">
+              <button onclick="toggleReply(this)">Reply</button>
+            </div>
+            <div class="discussion-reply">
+              <textarea placeholder="Write a reply..."></textarea>
+              <button onclick="addComment(this)">Submit Reply</button>
+            </div>
+            <div class="discussion-comments"></div>
+          </div>
+        </article>
+        <article class="discussion-card" data-category="depression">
+          <div class="discussion-content">
+            <h3>Overcoming Depression</h3>
+            <p>Strategies to combat depression effectively.</p>
+            <div class="discussion-interact">
+              <button onclick="toggleReply(this)">Reply</button>
+            </div>
+            <div class="discussion-reply">
+              <textarea placeholder="Write a reply..."></textarea>
+              <button onclick="addComment(this)">Submit Reply</button>
+            </div>
+            <div class="discussion-comments"></div>
+          </div>
+        </article>
+        <article class="discussion-card" data-category="others">
+          <div class="discussion-content">
+            <h3>General Well-being Hacks</h3>
+            <p>What general tips do you have for better mental health?</p>
+            <div class="discussion-interact">
+              <button onclick="toggleReply(this)">Reply</button>
+            </div>
+            <div class="discussion-reply">
+              <textarea placeholder="Write a reply..."></textarea>
+              <button onclick="addComment(this)">Submit Reply</button>
+            </div>
+            <div class="discussion-comments"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <script>
+      const discussionList = document.getElementById("discussionList");
+      const newDiscussionForm = document.getElementById("newDiscussionForm");
+      const forumCategoryFilter = document.getElementById(
+        "forumCategoryFilter"
+      );
+      const selectedForumCategoryName = document.getElementById(
+        "selectedForumCategoryName"
+      );
+
+      function toggleReply(button) {
+        const replyBox = button.parentElement.nextElementSibling;
+        if (replyBox.classList.contains("discussion-box-open")) {
+          replyBox.classList.remove("discussion-box-open");
+        } else {
+          replyBox.classList.add("discussion-box-open");
+        }
+      }
+
+      function addComment(button) {
+        const commentBox = button.previousElementSibling;
+        const commentText = commentBox.value.trim();
+        if (commentText !== "") {
+          const commentSection = button.parentElement.nextElementSibling;
+          const comment = document.createElement("p");
+          comment.textContent = commentText;
+          commentSection.appendChild(comment);
+          commentSection.style.display = "block";
+          commentBox.value = "";
+        }
+      }
+
+      newDiscussionForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const title = document.getElementById("discussionTitle").value;
+        const body = document.getElementById("discussionBody").value;
+        const category =
+          document
+            .querySelector(".chip-group .chip-active")
+            ?.textContent.toLowerCase() || "others";
+
+        const discussionCard = document.createElement("article");
+        discussionCard.classList.add("discussion-card");
+        discussionCard.setAttribute("data-category", category);
+
+        discussionCard.innerHTML = `
+        <div class="discussion-content">
+          <h3>${title}</h3>
+          <p>${body}</p>
+          <div class="discussion-interact">
+            <button onclick="toggleReply(this)">Reply</button>
+          </div>
+          <div class="discussion-reply">
+            <textarea placeholder="Write a reply..."></textarea>
+            <button onclick="addComment(this)">Submit Reply</button>
+          </div>
+          <div class="discussion-comments"></div>
+        </div>
+      `;
+
+        discussionList.appendChild(discussionCard);
+        newDiscussionForm.reset();
+        filterDiscussions();
+      });
+
+      forumCategoryFilter.addEventListener("change", function () {
+        selectedForumCategoryName.textContent =
+          this.options[this.selectedIndex].text; // Update the selected category display
+        filterDiscussions();
+      });
+
+      function filterDiscussions() {
+        const selectedCategory = forumCategoryFilter.value;
+        const discussions = document.querySelectorAll(".discussion-card");
+
+        discussions.forEach((discussion) => {
+          if (
+            selectedCategory === "all" ||
+            discussion.dataset.category === selectedCategory
+          ) {
+            discussion.style.display = "block";
+          } else {
+            discussion.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

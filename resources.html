@@ -1,0 +1,273 @@
+<!-- resources.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resource Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <img src="https://via.placeholder.com/150" alt="MindFulConnect Logo" />
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Resources</a>
+        <a href="#">Support Forum</a>
+        <a href="#">Counseling</a>
+        <a href="#">Mental Health Quizzes</a>
+        <a href="#">Login/Sign-Up</a>
+      </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="resources-sidebar">
+      <div class="resources-search-bar">
+        <input type="text" placeholder="Search" />
+        <img src="./assets/ic-search-2.svg" alt="Search Icon" />
+      </div>
+      <div class="resources-filter">
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter">
+          <option value="all">All</option>
+          <option value="anxiety">Anxiety</option>
+          <option value="mindfulness">Mindfulness</option>
+          <option value="depression">Depression</option>
+        </select>
+      </div>
+      <!-- Display the selected category here -->
+      <div class="selected-category">
+        <h3>Selected Category:</h3>
+        <p id="selectedCategoryName">All</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="resources-main">
+      <!-- Hero Section -->
+      <section class="resources-hero">
+        <h1>Welcome to our Resource Page</h1>
+        <p>Find a variety of resources to support your mental health journey</p>
+        <a href="#" class="resources-button">Learn More</a>
+      </section>
+
+      <!-- Educational Resources -->
+      <section class="resources-section" id="resources-content">
+        <h2>Educational Resources</h2>
+        <div class="resources-cards">
+          <!-- Anxiety Resources -->
+          <article class="resources-card" data-category="anxiety">
+            <img
+              src="assets/resources/nathan-mcdine-M1gMpG4QkHk-unsplash.jpg"
+              alt="Understanding Anxiety"
+            />
+            <h3>Understanding Anxiety</h3>
+            <p>Learn about the symptoms and treatments of anxiety</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+          <article class="resources-card" data-category="anxiety">
+            <img
+              src="assets/resources/dan-meyers-hluOJZjLVXc-unsplash.jpg"
+              alt="Anxiety Management"
+            />
+            <h3>Anxiety Management</h3>
+            <p>Discover techniques to cope with anxiety</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+          <article class="resources-card" data-category="anxiety">
+            <img
+              src="assets/resources/matthew-ball-3wW2fBjptQo-unsplash.jpg"
+              alt="Anxiety Workbook"
+            />
+            <h3>Anxiety Workbook</h3>
+            <p>Practice exercises to reduce anxiety</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+
+          <!-- Mindfulness Resources -->
+          <article class="resources-card" data-category="mindfulness">
+            <img
+              src="assets/resources/emily-underworld-Ko3EMBFggok-unsplash.jpg"
+              alt="Practicing Mindfulness"
+            />
+            <h3>Practicing Mindfulness</h3>
+            <p>Guided mindfulness exercises for daily practice</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+          <article class="resources-card" data-category="mindfulness">
+            <img
+              src="assets/resources/nathan-mcdine-M1gMpG4QkHk-unsplash.jpg"
+              alt="Mindfulness Meditation"
+            />
+            <h3>Mindfulness Meditation</h3>
+            <p>Learn to meditate effectively</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+          <article class="resources-card" data-category="mindfulness">
+            <img
+              src="assets/resources/dan-meyers-hluOJZjLVXc-unsplash.jpg"
+              alt="Mindful Eating"
+            />
+            <h3>Mindful Eating</h3>
+            <p>Cultivate healthy eating habits with mindfulness</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+
+          <!-- Depression Resources -->
+          <article class="resources-card" data-category="depression">
+            <img
+              src="assets/resources/matthew-ball-3wW2fBjptQo-unsplash.jpg"
+              alt="Coping with Depression"
+            />
+            <h3>Coping with Depression</h3>
+            <p>Strategies to manage symptoms of depression</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+          <article class="resources-card" data-category="depression">
+            <img
+              src="assets/resources/emily-underworld-Ko3EMBFggok-unsplash.jpg"
+              alt="Depression Insights"
+            />
+            <h3>Depression Insights</h3>
+            <p>Understanding depression through research</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+          <article class="resources-card" data-category="depression">
+            <img
+              src="assets/resources/nathan-mcdine-M1gMpG4QkHk-unsplash.jpg"
+              alt="Depression Recovery"
+            />
+            <h3>Depression Recovery</h3>
+            <p>Steps to overcome depression</p>
+            <a href="#" class="resources-button">Read More</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Featured Resources -->
+      <section class="resources-section">
+        <h2>Featured Resources</h2>
+        <div class="resources-cards">
+          <!-- Anxiety Featured Resources -->
+          <div class="resources-card" data-category="anxiety">
+            <img
+              src="assets/resources/dan-meyers-hluOJZjLVXc-unsplash.jpg"
+              alt="Anxiety Article"
+            />
+            <h3>Coping with Anxiety</h3>
+            <p>Author: John Doe</p>
+            <a href="#" class="resources-button">Learn More</a>
+          </div>
+          <div class="resources-card" data-category="anxiety">
+            <img
+              src="assets/resources/matthew-ball-3wW2fBjptQo-unsplash.jpg"
+              alt="Anxiety Podcast"
+            />
+            <h3>Anxiety Podcast</h3>
+            <p>Host: Sarah Connor</p>
+            <a href="#" class="resources-button">Listen Now</a>
+          </div>
+          <div class="resources-card" data-category="anxiety">
+            <img
+              src="assets/resources/emily-underworld-Ko3EMBFggok-unsplash.jpg"
+              alt="Anxiety Guide"
+            />
+            <h3>Anxiety Guide</h3>
+            <p>Comprehensive guide to anxiety management</p>
+            <a href="#" class="resources-button">Explore Guide</a>
+          </div>
+
+          <!-- Mindfulness Featured Resources -->
+          <div class="resources-card" data-category="mindfulness">
+            <img
+              src="assets/resources/nathan-mcdine-M1gMpG4QkHk-unsplash.jpg"
+              alt="Mindfulness Video"
+            />
+            <h3>Mindful Meditation</h3>
+            <p>Duration: 15 mins</p>
+            <a href="#" class="resources-button">Watch Now</a>
+          </div>
+          <div class="resources-card" data-category="mindfulness">
+            <img
+              src="assets/resources/dan-meyers-hluOJZjLVXc-unsplash.jpg"
+              alt="Mindfulness Book"
+            />
+            <h3>Mindful Living</h3>
+            <p>Book by Thich Nhat Hanh</p>
+            <a href="#" class="resources-button">Read Book</a>
+          </div>
+          <div class="resources-card" data-category="mindfulness">
+            <img
+              src="assets/resources/matthew-ball-3wW2fBjptQo-unsplash.jpg"
+              alt="Daily Mindfulness"
+            />
+            <h3>Daily Mindfulness</h3>
+            <p>30-day mindfulness challenge</p>
+            <a href="#" class="resources-button">Start Challenge</a>
+          </div>
+
+          <!-- Depression Featured Resources -->
+          <div class="resources-card" data-category="depression">
+            <img
+              src="assets/resources/emily-underworld-Ko3EMBFggok-unsplash.jpg"
+              alt="Depression Blog"
+            />
+            <h3>Living with Depression</h3>
+            <p>Author: Jane Shrestha</p>
+            <a href="#" class="resources-button">Read Blog</a>
+          </div>
+          <div class="resources-card" data-category="depression">
+            <img
+              src="assets/resources/nathan-mcdine-M1gMpG4QkHk-unsplash.jpg"
+              alt="Depression Support"
+            />
+            <h3>Depression Support Group</h3>
+            <p>Join discussions and support</p>
+            <a href="#" class="resources-button">Join Group</a>
+          </div>
+          <div class="resources-card" data-category="depression">
+            <img
+              src="assets/resources/dan-meyers-hluOJZjLVXc-unsplash.jpg"
+              alt="Depression Course"
+            />
+            <h3>Depression Course</h3>
+            <p>Online course for managing depression</p>
+            <a href="#" class="resources-button">Enroll Now</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+    </footer>
+
+    <script>
+      // JavaScript to handle filtering and displaying the selected category
+      const categoryFilter = document.getElementById("categoryFilter");
+      const selectedCategoryName = document.getElementById(
+        "selectedCategoryName"
+      );
+
+      categoryFilter.addEventListener("change", function () {
+        const selectedCategory = this.value;
+        const articles = document.querySelectorAll(".resources-card");
+        selectedCategoryName.textContent =
+          this.options[this.selectedIndex].text;
+
+        articles.forEach((article) => {
+          if (
+            selectedCategory === "all" ||
+            article.dataset.category === selectedCategory
+          ) {
+            article.style.display = "block";
+          } else {
+            article.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
