@@ -3,43 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MindFulConnect - Counseling Services</title>
+    <title>Counseling Services</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="logo">MindFulConnect</div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="counseling.html">Counseling</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
+    <!-- Unified Top Bar -->
+    <header class="top-bar">
+      <img src="https://via.placeholder.com/150" alt="MindFulConnect Logo" />
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="support.html">Support Forum</a>
+        <a href="counseling.html">Counseling</a>
+        <a href="assessment.html">Mental Health Quizzes</a>
+        <a href="login.html">Login/Sign-Up</a>
       </nav>
     </header>
 
+    <!-- Counseling Services Section -->
     <section class="counseling-section">
-      <h2>Connect with Professional Counselors</h2>
-      <p>Select from our licensed professionals for personalized sessions.</p>
-
-      <div class="counselor">
-        <h3>Dr. John Doe - Anxiety Specialist</h3>
-        <p>Teletherapy | Available: Monday, Wednesday, Friday</p>
-        <a href="#" class="btn">Book a Session</a>
-      </div>
-
-      <div class="counselor">
-        <h3>Dr. Jane Smith - Depression Specialist</h3>
-        <p>Teletherapy | Available: Tuesday, Thursday</p>
-        <a href="#" class="btn">Book a Session</a>
+      <div class="counseling-container">
+        <h1>Counseling Services</h1>
+        <p>Find the support you need by connecting with our licensed counselors. Choose a counselor based on your preferences, location, and availability.</p>
       </div>
     </section>
 
+    <!-- Filter Section -->
+    <section class="counseling-filter-section">
+      <div class="counseling-container">
+        <h2>Filter Counselors</h2>
+        <div class="counseling-filter">
+          <label for="categoryFilter">Select a Category:</label>
+          <select id="categoryFilter">
+            <option value="all">All</option>
+            <option value="depression">Depression</option>
+            <option value="anxiety">Anxiety</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+        <div class="counseling-filter">
+          <label for="sessionTypeFilter">Select Session Type:</label>
+          <select id="sessionTypeFilter">
+            <option value="all">All Sessions</option>
+            <option value="virtual">Virtual Session</option>
+            <option value="physical">Physical Session</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Counselor Listings Section -->
+    <section class="counseling-listings-section">
+      <div class="counseling-container">
+        <h2>Counselor Listings</h2>
+        <div class="counseling-cards-list" id="counselorList">
+          <!-- Counselor Card Example 1 -->
+          <div class="counseling-card" data-category="anxiety" data-session="virtual">
+            <div class="counseling-card-image">
+              <img src="https://via.placeholder.com/300x200" alt="Counselor Profile Picture" />
+            </div>
+            <div class="counseling-card-content">
+              <h3>Dr. Jane Smith, Licensed Therapist</h3>
+              <p>Areas of Expertise: Anxiety, Depression</p>
+              <div class="counselor-details">
+                <p><strong>Contact:</strong> 123-456-7890</p>
+                <p><strong>Email:</strong> jane.smith@example.com</p>
+                <p><strong>Location:</strong> Kathmandu, Nepal</p>
+                <p><strong>Availability:</strong><br>Monday 10 AM - 2 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Counselor Card Example 2 -->
+          <div class="counseling-card" data-category="depression" data-session="physical">
+            <div class="counseling-card-image">
+              <img src="https://via.placeholder.com/300x200" alt="Counselor Profile Picture" />
+            </div>
+            <div class="counseling-card-content">
+              <h3>Dr. John Doe, Psychologist</h3>
+              <p>Areas of Expertise: Stress Management</p>
+              <div class="counselor-details">
+                <p><strong>Contact:</strong> 987-654-3210</p>
+                <p><strong>Email:</strong> john.doe@example.com</p>
+                <p><strong>Location:</strong> Kathmandu, Nepal</p>
+                <p><strong>Availability:</strong><br>Wednesday 1 PM - 5 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Counselor Card Example 3 -->
+          <div class="counseling-card" data-category="others" data-session="virtual">
+            <div class="counseling-card-image">
+              <img src="https://via.placeholder.com/300x200" alt="Counselor Profile Picture" />
+            </div>
+            <div class="counseling-card-content">
+              <h3>Dr. Alice Green, Mental Health Counselor</h3>
+              <p>Areas of Expertise: Grief Counseling, Life Transitions</p>
+              <div class="counselor-details">
+                <p><strong>Contact:</strong> 456-123-6789</p>
+                <p><strong>Email:</strong> alice.green@example.com</p>
+                <p><strong>Location:</strong> Pokhara, Nepal</p>
+                <p><strong>Availability:</strong><br>Friday 11 AM - 3 PM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Counselor Card Example 4 -->
+          <div class="counseling-card" data-category="depression" data-session="virtual">
+            <div class="counseling-card-image">
+              <img src="https://via.placeholder.com/300x200" alt="Counselor Profile Picture" />
+            </div>
+            <div class="counseling-card-content">
+              <h3>Dr. Emily White, Clinical Psychologist</h3>
+              <p>Areas of Expertise: Clinical Depression, PTSD</p>
+              <div class="counselor-details">
+                <p><strong>Contact:</strong> 555-987-2345</p>
+                <p><strong>Email:</strong> emily.white@example.com</p>
+                <p><strong>Location:</strong> Lalitpur, Nepal</p>
+                <p><strong>Availability:</strong><br>Tuesday 9 AM - 12 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unified Footer -->
     <footer>
-      <p>
-        &copy; 2024 MindFulConnect | <a href="privacy.html">Privacy Policy</a>
-      </p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
     </footer>
+
+    <script src="counseling.js"></script>
   </body>
 </html>
