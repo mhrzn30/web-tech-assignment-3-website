@@ -18,6 +18,8 @@ body {
 
 .top-bar img {
   height: 40px;
+  transform: scale(2);
+  transform-origin: left;
 }
 
 .nav-links {
@@ -589,9 +591,9 @@ button:hover {
 
 .progress-bar div {
   height: 100%;
-  width: 0;
+  width: 0%;
   background-color: #76c7c0;
-  transition: width 0.3s;
+  transition: width 0.3s ease-in-out;
 }
 
 .counseling-section,
@@ -634,10 +636,86 @@ button:hover {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+} /* Button Styles */
+.button {
+  background-color: #9bc8c9;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #9bc8c9;
+}
+
+.resources-button {
+  background-color: #9bc8c9;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.resources-button:hover {
+  background-color: #9bc8c9;
+}
+
+.signup-button {
+  width: 100%;
+  background-color: #9bc8c9;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.signup-button:hover:enabled {
+  background-color: #9bc8c9;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #9bc8c9;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #9bc8c9;
+}
+
+/* Card Styles */
+.card {
+  background-color: #d9eff0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 300px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
 .counseling-card {
-  background-color: #fff;
+  background-color: #d9eff0;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   overflow: hidden;
@@ -648,22 +726,60 @@ button:hover {
   height: auto; /* Allow height to adjust based on content */
 }
 
+.resources-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px; /* Fixed width for consistency */
+  height: 350px; /* Fixed height for uniformity */
+  background-color: #d9eff0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  padding: 16px;
+}
+
+.discussion-card,
+.category-item {
+  background-color: #d9eff0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 24px;
+  width: 32%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.counseling-card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  height: auto;
+}
+
 .counseling-card-content {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align content to the top */
-  align-items: flex-start; /* Align text to the left for better readability */
-  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .counselor-details p {
   margin: 4px 0;
-  font-size: 14px; /* Adjust font size */
+  font-size: 14px;
   color: #666;
-  line-height: 1.4; /* Improve spacing for readability */
+  line-height: 1.4;
 }
-
 
 .counseling-card:hover {
   transform: translateY(-5px);
@@ -806,7 +922,6 @@ button:hover {
   text-decoration: underline;
 }
 
-
 .login-section {
   display: flex;
   justify-content: center;
@@ -883,4 +998,14 @@ button:hover {
 
 .login-container a:hover {
   text-decoration: underline;
+}
+
+.input-group select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
 }

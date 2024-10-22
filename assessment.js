@@ -73,7 +73,7 @@ function showQuestion() {
   currentQuestionSpan.textContent = currentQuestionIndex + 1;
   totalQuestionsSpan.textContent = totalQuestions;
 
-  const progressPercent = (currentQuestionIndex / totalQuestions) * 100;
+  const progressPercent = ((currentQuestionIndex + 1) / totalQuestions) * 100;
   progressElement.style.width = `${progressPercent}%`;
 
   answerSelect.value = "";

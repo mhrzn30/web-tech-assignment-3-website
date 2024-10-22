@@ -10,13 +10,16 @@
   <body>
     <!-- Top Bar -->
     <header class="top-bar">
-      <img src="https://via.placeholder.com/150" alt="MindFulConnect Logo" />
+      <img
+        src="C:\Users\Fantech\Desktop\web tech assignment 3 website\assets\logo\MindFulConnect_transparent-.png"
+        alt="MindFulConnect Logo"
+      />
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="resources.html">Resources</a>
         <a href="support.html">Support Forum</a>
         <a href="counseling.html">Counseling</a>
-        <a href="assessment.html">Mental Health Quizzes</a>
+        <a href="assessment.html">Mental Health Assessment</a>
         <a href="login.html">Login/Sign-Up</a>
       </nav>
     </header>
@@ -245,7 +248,6 @@
     </footer>
 
     <script>
-      // JavaScript to handle filtering and displaying the selected category
       const categoryFilter = document.getElementById("categoryFilter");
       const selectedCategoryName = document.getElementById(
         "selectedCategoryName"
@@ -266,6 +268,13 @@
           } else {
             article.style.display = "none";
           }
+        });
+      });
+
+      document.querySelectorAll(".resources-button").forEach((button) => {
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          alert("Under Development");
         });
       });
     </script>

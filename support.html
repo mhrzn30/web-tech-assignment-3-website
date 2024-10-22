@@ -6,27 +6,12 @@
     <title>Support Forum</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="support.css" />
-    <style>
-      /* Some additional styling */
-      .discussion-reply {
-        display: none;
-        margin-top: 10px;
-      }
-      .discussion-comments {
-        display: none;
-        margin-top: 15px;
-        padding-left: 20px;
-      }
-      .discussion-box-open {
-        display: block;
-      }
-    </style>
   </head>
   <body>
     <!-- Top Bar -->
     <header class="top-bar">
       <img
-        src="https://via.placeholder.com/150"
+        src="C:\Users\Fantech\Desktop\web tech assignment 3 website\assets\logo\MindFulConnect_transparent-.png"
         alt="MindFulConnect Logo"
         class="logo"
       />
@@ -35,7 +20,7 @@
         <a href="resources.html">Resources</a>
         <a href="support.html">Support Forum</a>
         <a href="counseling.html">Counseling</a>
-        <a href="assessment.html">Mental Health Quizzes</a>
+        <a href="assessment.html">Mental Health Assessment</a>
         <a href="login.html">Login/Sign-Up</a>
       </nav>
     </header>
@@ -57,7 +42,6 @@
           <option value="others">Others</option>
         </select>
       </div>
-      <!-- Display the selected forum category here -->
       <div class="selected-category">
         <h3>Selected Category:</h3>
         <p id="selectedForumCategoryName">All</p>
@@ -87,14 +71,17 @@
       <h2>Start a New Discussion</h2>
       <p>Share your thoughts and experiences</p>
       <form id="newDiscussionForm">
-        <div class="chip-group">
-          <span class="chip">Anxiety</span>
-          <span class="chip">Mindfulness</span>
-          <span class="chip">Depression</span>
-          <span class="chip">Others</span>
+        <div class="input-group">
+          <label for="discussionCategory">Select Category</label>
+          <select id="discussionCategory" required>
+            <option value="anxiety">Anxiety</option>
+            <option value="mindfulness">Mindfulness</option>
+            <option value="depression">Depression</option>
+            <option value="others">Others</option>
+          </select>
         </div>
         <div class="input-group">
-          <label for="discussion-title">Discussion Title</label>
+          <label for="discussionTitle">Discussion Title</label>
           <input
             type="text"
             id="discussionTitle"
@@ -103,7 +90,7 @@
           />
         </div>
         <div class="input-group">
-          <label for="discussion-body">Body</label>
+          <label for="discussionBody">Body</label>
           <textarea
             id="discussionBody"
             placeholder="Type your message here"
@@ -219,29 +206,28 @@
         e.preventDefault();
         const title = document.getElementById("discussionTitle").value;
         const body = document.getElementById("discussionBody").value;
-        const category =
-          document
-            .querySelector(".chip-group .chip-active")
-            ?.textContent.toLowerCase() || "others";
+        const category = document
+          .getElementById("discussionCategory")
+          .value.toLowerCase();
 
         const discussionCard = document.createElement("article");
         discussionCard.classList.add("discussion-card");
         discussionCard.setAttribute("data-category", category);
 
         discussionCard.innerHTML = `
-        <div class="discussion-content">
-          <h3>${title}</h3>
-          <p>${body}</p>
-          <div class="discussion-interact">
-            <button onclick="toggleReply(this)">Reply</button>
+          <div class="discussion-content">
+            <h3>${title}</h3>
+            <p>${body}</p>
+            <div class="discussion-interact">
+              <button onclick="toggleReply(this)">Reply</button>
+            </div>
+            <div class="discussion-reply">
+              <textarea placeholder="Write a reply..."></textarea>
+              <button onclick="addComment(this)">Submit Reply</button>
+            </div>
+            <div class="discussion-comments"></div>
           </div>
-          <div class="discussion-reply">
-            <textarea placeholder="Write a reply..."></textarea>
-            <button onclick="addComment(this)">Submit Reply</button>
-          </div>
-          <div class="discussion-comments"></div>
-        </div>
-      `;
+        `;
 
         discussionList.appendChild(discussionCard);
         newDiscussionForm.reset();
@@ -250,7 +236,7 @@
 
       forumCategoryFilter.addEventListener("change", function () {
         selectedForumCategoryName.textContent =
-          this.options[this.selectedIndex].text; // Update the selected category display
+          this.options[this.selectedIndex].text;
         filterDiscussions();
       });
 
